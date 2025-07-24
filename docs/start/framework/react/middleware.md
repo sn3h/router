@@ -322,6 +322,18 @@ registerGlobalMiddleware({
 })
 ```
 
+If you use different folder and/or file naming convetion you must import the middleware to router.tsx.
+
+```
+// for example src/middleware/globalMiddleware.ts
+import "@/middleware/globalMiddleware";
+
+
+export function createRouter() {
+...
+}
+```
+
 ### Global Middleware Type Safety
 
 Global middleware types are inherently **detached** from server functions themselves. This means that if a global middleware supplies additional context to server functions or other server function specific middleware, the types will not be automatically passed through to the server function or other server function specific middleware.
